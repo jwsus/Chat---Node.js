@@ -14,10 +14,14 @@
             <button type="submit">Enviar</button>
         </form>
         <script type="text/javascript" > 
-            var socket = io('http://localhost:3000');
-
-            function renderMessage(message){
-                $('.messages').append('<div class="message"><strong>'+ message.author+'</strong>:'+ message.message +' </div>');
+            // utilize localhost:3000 para rodar de forma local
+            // caso acesse através do CodeSandBox cole aqui o link gerado
+            var socket = io('http://localhost:3000'); 
+            
+            function renderMessage(message) {
+                var author = message.author.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+                var message1 = message.message.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+                $(".messages").append('<div class="message"><strong>' +author +"</strong>:" +message1 +" </div>");
             }
 
             socket.on('previousMessages', messages => {
