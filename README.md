@@ -2,4 +2,4 @@
 Servidor de chat utilizando Node.js e JQuery
 
 # Acesse:
-https://codesandbox.io/s/github/jwsus/Chat-Node.j
+https://codesandbox.io/s/github/jwsus/Chat-Node.js
